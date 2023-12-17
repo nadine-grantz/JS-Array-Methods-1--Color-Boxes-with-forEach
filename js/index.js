@@ -21,29 +21,23 @@ const colors = [
 
 // ab hier ändern
 
-//colors.forEach();
-
-// Ein neues div-Element erstellen
-function createColorBox(hexCode) {
+colors.forEach((hexCode) => {
+  // 1. Ein neues <div> Element erstellen mit der Variable colorBox
   const colorBox = document.createElement("div");
 
-  // Die Klasse "color-box" dem neuen div hinzufügen
+  // 2. Die Class 'color-box' hinzufügen
   colorBox.classList.add("color-box");
 
-  // Die Hintergrundfarbe des div auf den aktuellen Hex-Code setzen
+  // 3. Die Hintergrundfarbe auf den aktuellen Hex-Code setzen
   colorBox.style.backgroundColor = hexCode;
 
-  return colorBox;
-}
-
-// Auf das vollständige Laden des DOM-Inhalts warten
-document.addEventListener("DOMContentLoaded", function () {
-  // Das Container-Element per ID abrufen
-  const colorContainer = document.getElementById("color-container");
-
-  // Über das colors-Array mit forEach iterieren und jedes div dem Container hinzufügen
-  colors.forEach((hexCode) => {
-    const colorBox = createColorBox(hexCode);
-    colorContainer.appendChild(colorBox);
-  });
+  // 4. Das erstellte <div> der Seite hinzufügen, sonst schwebt es im Luftleeren-Raum und es wird nichts angezeigt.
+  document.body.append(colorBox);
 });
+
+/*colors.forEach((hexCode) => {
+  const colorBox = document.createElement("div");
+  colorBox.classList.add("color-Box");
+  colorBox.style.backgroundColor = hexCode;
+  document.body.append(colorBox);
+}*/
