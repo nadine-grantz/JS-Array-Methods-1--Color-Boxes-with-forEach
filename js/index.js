@@ -17,6 +17,33 @@ const colors = [
   "#4D5645",
   "#606E8C",
   "#A5A5A5",
-];
+]; // das ist ein Array
 
-colors.forEach();
+// ab hier ändern
+
+//colors.forEach();
+
+// Ein neues div-Element erstellen
+function createColorBox(hexCode) {
+  const colorBox = document.createElement("div");
+
+  // Die Klasse "color-box" dem neuen div hinzufügen
+  colorBox.classList.add("color-box");
+
+  // Die Hintergrundfarbe des div auf den aktuellen Hex-Code setzen
+  colorBox.style.backgroundColor = hexCode;
+
+  return colorBox;
+}
+
+// Auf das vollständige Laden des DOM-Inhalts warten
+document.addEventListener("DOMContentLoaded", function () {
+  // Das Container-Element per ID abrufen
+  const colorContainer = document.getElementById("color-container");
+
+  // Über das colors-Array mit forEach iterieren und jedes div dem Container hinzufügen
+  colors.forEach((hexCode) => {
+    const colorBox = createColorBox(hexCode);
+    colorContainer.appendChild(colorBox);
+  });
+});
