@@ -19,7 +19,8 @@ const colors = [
   "#A5A5A5",
 ]; // das ist ein Array
 
-// ab hier ändern
+/*
+// Aufgabe 1
 
 colors.forEach((hexCode) => {
   // 1. Ein neues <div> Element erstellen mit der Variable colorBox
@@ -34,10 +35,29 @@ colors.forEach((hexCode) => {
   // 4. Das erstellte <div> der Seite hinzufügen, sonst schwebt es im Luftleeren-Raum und es wird nichts angezeigt.
   document.body.append(colorBox);
 });
-
-/*colors.forEach((hexCode) => {
+-------------------------------------------------------------------------------------------
+Lösung:
+colors.forEach((hexCode) => {
   const colorBox = document.createElement("div");
   colorBox.classList.add("color-Box");
   colorBox.style.backgroundColor = hexCode;
   document.body.append(colorBox);
 }*/
+
+// Aufgabe 2
+
+// 1. Erzeuge ine Funktion mit dem Parameter color
+function renderColorBox(color){
+// 2. Ein neues <div> Element für die HTML wird erstellt mit der Variablen colorBox
+  const box = document.createElement("div");
+// 3. Füge der Variablen box die Class color-box hinzu
+  box.classList.add("color-box");
+// 4. 
+  box.style.backgroundColor = color;
+//5. Das div Element box wird zur HTML Seite hinzugefügt, sonst schwebt es im luftleeren Raum!
+  document.body.append(box);
+}
+
+colors.forEach((color)=>{
+  renderColorBox(color);
+});
